@@ -8,6 +8,7 @@ import Index from './components/Index';
 import userContext from '../context/userContext';
 import { verifyToken } from './services/ServiceWorkers';
 import Meeting from './components/Meeting';
+import Footer from './components/Footer';
 
 function App() {
   const [userData, setUserData] = useState(null);
@@ -41,6 +42,7 @@ function App() {
           <Route path='/meeting' element={<Meeting />} />
         </Routes>
         <Outlet />
+        <Footer />
       </Router>
       </userContext.Provider>
     </Fragment>

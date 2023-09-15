@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { findAUserExistance } from '../services/ServiceWorkers';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import signin from '../assets/signin.svg'
 
 function Login() {
     useEffect(() => {
@@ -46,43 +47,52 @@ function Login() {
 
     return (
         <Fragment>
-            <form method='POST' >
-                <div className="form_group">
-                    <label htmlFor="uname">User Name</label>
-                    <input
-                        type='text'
-                        name='uname'
-                        id='uname'
-                        onChange={(e) => handleEdit(e)}
-                        value={UserDetails.uname}
-                    />
+
+            <section className="app form_page">
+                <div className="svg_container">
+                    <img src={signin} alt="signin" className='signin_svg_image' />
                 </div>
-                <div className="form_group">
-                    <label htmlFor="gmail">Gmail</label>
-                    <input
-                        type='email'
-                        name='gmail'
-                        id='gmail'
-                        onChange={(e) => handleEdit(e)}
-                        value={UserDetails.gmail}
-                    />
+                <div className="form_container">
+                    <form method='POST' onSubmit={(e) => handleSubmit(e)}>
+                        <h1 className="title">Login as</h1>
+                        <div className="form_group">
+                            <label htmlFor="uname">User Name: </label>
+                            <input
+                                type="text"
+                                name="uname"
+                                id="uname"
+                                onChange={(e) => handleEdit(e)}
+                            />
+                        </div>
+
+                        <div className="form_group">
+                            <label htmlFor="gmail">E-mail: </label>
+                            <input
+                                type="email"
+                                name="gmail"
+                                id="gmail"
+                                onChange={(e) => handleEdit(e)}
+                            />
+                        </div>
+
+                        <div className="form_group">
+                            <label htmlFor="pwd">Password: </label>
+                            <input
+                                type="password"
+                                name="pwd"
+                                id="pwd"
+                                onChange={(e) => handleEdit(e)}
+                            />
+                        </div>
+
+                        <input
+                            type="submit"
+                            value={'login'}
+                        />
+                        <p className="message">Don't have an account? <Link to={'/register'}>Register</Link></p>
+                    </form>
                 </div>
-                <div className="form_group">
-                    <label htmlFor="pwd">Password</label>
-                    <input
-                        type='password'
-                        name='pwd'
-                        id='pwd'
-                        onChange={(e) => handleEdit(e)}
-                        value={UserDetails.pwd}
-                    />
-                </div>
-                <input
-                    type='submit'
-                    value={'Login'}
-                    onClick={(e) => handleSubmit(e)}
-                />
-            </form>
+            </section>
         </Fragment>
     )
 }

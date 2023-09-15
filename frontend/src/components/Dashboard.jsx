@@ -1,11 +1,15 @@
-import React, { Fragment } from 'react'
+import React from 'react';
 
-function Dashboard() {
+const Hero = () => {
   return (
-    <Fragment>
-        <h1>Dashboard</h1>
-    </Fragment>
-  )
-}
+    <div className="hero">
+      <div className="hero-content">
+        <h1 className="hero-title">Welcome to our Website</h1>
+        <p className="hero-subtitle">Discover amazing content and features.</p>
+        <button className="hero-button">Get Started</button>
+      </div>
+    </div>
+  );
+};
 
-export default Dashboard
+export default Hero;
