@@ -28,6 +28,9 @@ function Navbar() {
           <li>
             <Link to={'/login'}>Login</Link>
           </li>
+          <li>
+            <Link to={'/meeting'}><i className="fa fa-video-camera"></i> Join</Link>
+          </li>
         </ul>
       </nav>
     </Fragment>

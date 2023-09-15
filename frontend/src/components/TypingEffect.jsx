@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Typewriter from "typewriter-effect";
 
 function TypingEffect() {
+    const nav = useNavigate();
     return (
         <div className="hero_page">
             <div className="hero">

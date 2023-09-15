@@ -423,3 +423,65 @@ nav ul li:hover a:not(.nav_btn) {
 .typing-effect {
     font-size: 55px;
 }
+
+/* Meeting Page */
+.meeting_page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.meeting_page .meeting_container {
+    background-color: var(--color6);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+}
+
+.meeting_page .meeting_container .form_group {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meeting_page .meeting_container .form_group .meeting_title {
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.meeting_page .meeting_container .form_group .copy, .meeting_page .meeting_container .form_group_call button {
+    background-color: var(--main1);
+    border: none;
+    outline: none;
+    padding: 6px 20px;
+    color: var(--color6);
+    margin: 20px 0px 10px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.meeting_page .meeting_container .form_group_call {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.meeting_page .meeting_container .form_group_call input[type="text"] {
+    width: 100%;
+    padding: 2px 6px;
+    outline: none;
+    letter-spacing: 0.03rem;
+    font-size: 0.85rem;
+}
