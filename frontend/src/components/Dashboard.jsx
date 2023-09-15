@@ -1,12 +1,14 @@
 import React from 'react';
+import TypingEffect from './TypingEffect';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const nav = useNavigate();
+
   return (
     <div className="hero">
       <div className="hero-content">
-        <h1 className="hero-title">Welcome to our Website</h1>
-        <p className="hero-subtitle">Discover amazing content and features.</p>
-        <button className="hero-button">Get Started</button>
+        <TypingEffect />
       </div>
     </div>
   );
