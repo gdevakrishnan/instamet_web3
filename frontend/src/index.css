@@ -425,13 +425,18 @@ nav ul li:hover a:not(.nav_btn) {
 }
 
 /* Meeting Page */
-.meeting_page {
+.meeting_page , .video{
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.video {
+    flex-direction: row;
+    gap: 3rem;
 }
 
 .meeting_page .meeting_container {
@@ -444,6 +449,7 @@ nav ul li:hover a:not(.nav_btn) {
     justify-content: center;
     align-items: center;
     padding: 6px 12px;
+    height: auto;
 }
 
 .meeting_page .meeting_container .form_group {

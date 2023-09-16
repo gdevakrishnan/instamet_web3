@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, Fragment } from "react";
 import Peer from 'peerjs'
 import CopyToClipboard from 'react-copy-to-clipboard';
 
@@ -51,29 +51,31 @@ function Meeting() {
     }
 
     return (
-        <div className="meeting_page">
-            <div className="meeting_container">
-                <div className="form_group">
-                    <h1 className="meeting_title">Copy Your Meeting Id</h1>
-                    <CopyToClipboard text={peerId}>
-                        <button className="copy"><i className="fa fa-copy"></i></button>
-                    </CopyToClipboard>
-                </div>
-
-                <div className="form_group_call">
-                    <input type="text" value={remotePeerIdValue} onChange={e => setRemotePeerIdValue(e.target.value)} />
-                    <button onClick={() => call(remotePeerIdValue)}>Join or Create</button>
-                </div>
-                <div className="video">
-                    <div>
-                        <video ref={currentUserVideoRef} />
+        <Fragment>
+            <div className="meeting_page">
+                <div className="meeting_container">
+                    <div className="form_group">
+                        <h1 className="meeting_title">Copy Your Meeting Id</h1>
+                        <CopyToClipboard text={peerId}>
+                            <button className="copy"><i className="fa fa-copy"></i></button>
+                        </CopyToClipboard>
                     </div>
-                    <div>
-                        <video ref={remoteVideoRef} />
+
+                    <div className="form_group_call">
+                        <input type="text" value={remotePeerIdValue} onChange={e => setRemotePeerIdValue(e.target.value)} />
+                        <button onClick={() => call(remotePeerIdValue)}>Join or Create</button>
                     </div>
                 </div>
             </div>
-        </div>
+            <div className="video">
+                <div>
+                    <video ref={currentUserVideoRef} />
+                </div>
+                <div>
+                    <video ref={remoteVideoRef} />
+                </div>
+            </div>
+        </Fragment>
     );
 }
 
